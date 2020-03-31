@@ -314,7 +314,7 @@ const controller = {
   customizedcol(event) {
     if (event.key == "Enter") {
       let inputValue = +document.querySelector("#colsetinput").value //僅為可轉換數字
-      if (inputValue !== "" && model.numCellsClicked === 0 && utility.isNatural(inputValue) && inputValue < 37 && inputValue * inputValue > model.numberOfMines) {
+      if (inputValue !== "" && model.numCellsClicked === 0 && utility.isNatural(inputValue) && inputValue < 37 && (inputValue -1) * (inputValue - 1) > model.numberOfMines) {
         // console.log(model.numberOfRows)
         utility.playSoundeffect(model.soundEffect.enter)
         controller.cleareventlistener()
@@ -329,8 +329,8 @@ const controller = {
         alert("Please enter the natural number!\nFor example: 9")
       } else if (inputValue >= 37) {
         alert("Exceeded maximum limit 37 x 37!")
-      } else if (inputValue * inputValue < model.numberOfMines) {
-        alert("Too small to place so many bombs!!")
+      } else if ((inputValue -1) * (inputValue - 1) <= model.numberOfMines) {
+        alert(`Too small to place "${model.numberOfMines}" bombs!!`)
       }
     }
   },
