@@ -10,19 +10,24 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: -30px;
-  margin-top: 50px;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-top: 65px;
+  padding-bottom: 0px;
 }
 
 #header .title {
   width: 100%;
 	display: flex;
 	justify-content: center;
-  margin: 2% 0;
+  align-items: center;
+  margin:0px;
+  padding-bottom: 0px;
 }
 
 #header .title img {
   max-width: 3em;
+  max-height: 3em;
   }
 
 .wrapper {
